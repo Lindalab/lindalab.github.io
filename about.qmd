@@ -1,0 +1,47 @@
+---
+title: "About"
+---
+
+My Background
+
+I am a Computer Science graduate from Ashesi University in Ghana, where I developed an interest in using technology to solve practical problems. My undergraduate experience gave me a foundation in software development, databases, data analysis, and problem-solving.
+
+Since graduating, I have had the opportunity to work in different environments, including technology, research, product management, and social impact. These experiences have helped me understand that technology is most valuable when it is connected to real problems and the people affected by them.
+
+My Journey into Data Science
+
+My interest in data science grew from seeing how data can help us understand problems that are otherwise difficult to see.
+
+I have worked with tools such as Python, R, SQL, Excel, Tableau, and Power BI, and I have applied data analysis to research and organizational problems. My research experience has also exposed me to survey design, data cleaning, statistical analysis, and communicating findings to different audiences.
+
+I chose to pursue the Master of Data Science at UBC because I want to move beyond simply working with data toward developing the technical and analytical skills needed to build reliable, data-driven solutions.
+
+Areas I Care About
+
+I am particularly interested in the intersection of data science, environmental health, and public health.
+
+One area I have been exploring is the relationship between landfill air pollution, extreme weather, and respiratory health in Ghana. I am interested in how data from different sources—such as environmental, climate, geographic, and health data—can be combined to better understand these relationships.
+
+I am also interested in using data science to help African organizations and businesses make better decisions, especially organizations that may not yet have the resources or expertise to fully use their data.
+
+What I Hope to Learn at UBC
+
+During my MDS journey, I hope to strengthen my ability to:
+
+Analyze and interpret complex datasets
+Build statistical and machine-learning models
+Work with spatial and temporal data
+Communicate data-driven insights clearly
+Develop reproducible and responsible data workflows
+Use data science to address real-world problems
+
+Beyond the technical skills, I also want to become better at asking the right questions before choosing a model or analyzing a dataset.
+
+Looking Ahead
+
+My long-term goal is to use data and technology to contribute to meaningful development in Africa.
+
+I hope to work at the intersection of data science, technology, research, and social impact—helping organizations turn data into information that can support better decisions and better outcomes.
+
+This website will document part of that journey: what I learn, what I build, and how my thinking develops throughout the MDS program.
+
