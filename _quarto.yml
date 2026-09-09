@@ -4,12 +4,16 @@ project:
 
 website:
   title: "Linda Arthur"
+  page-navigation: true
+  page-footer: "Copyright 2026, Linda Arthur"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - blogs.qmd
+      - href: about.qmd
+        text: About
+      - href: blog.qmd
+        text: Blog
 
 format:
   html:
