@@ -16,5 +16,6 @@ Academically, I am particularly happy that I am beginning to understand the basi
 
 It is only the first week, so there is still a lot to learn. However, I am excited about the journey ahead and looking forward to seeing how much I will grow throughout the program.
 
-## Week 1 takeaway: Keep learning, keep asking questions, and don't be afraid of difficult concepts. They become easier with practice.
+[Week 1 takeaway: Keep learning, keep asking questions, and don't be afraid of difficult concepts. They become easier with practice.]{style="font-variant: font-weight: bold; font-style: italic;"}
+
 
