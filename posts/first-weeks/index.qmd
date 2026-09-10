@@ -1,0 +1,20 @@
+---
+title: "My first weeks in MDS"
+author: "Linda Arthur"
+date: 2026-09-10
+---
+ ![Orientation day on campus.](img2.jpeg)
+
+
+## Week 1: Getting Started with MDS
+
+My first week of the Master of Data Science (MDS) program has been exciting and full of new experiences. I have spent the week learning new concepts, getting familiar with the program, and meeting new people.
+
+One of the things I have enjoyed most so far is making new friends and connecting with other students. Starting a new program in a new environment can be challenging, so having people around who are also learning and experiencing the same things has made the transition more enjoyable.
+
+Academically, I am particularly happy that I am beginning to understand the basics of probability. Some of the concepts were initially challenging, but as I worked through the material and practiced more, they started to make sense. This has given me more confidence as I continue building my foundation in data science.
+
+It is only the first week, so there is still a lot to learn. However, I am excited about the journey ahead and looking forward to seeing how much I will grow throughout the program.
+
+## Week 1 takeaway: Keep learning, keep asking questions, and don't be afraid of difficult concepts. They become easier with practice.
+

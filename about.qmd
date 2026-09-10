@@ -2,13 +2,13 @@
 title: "About"
 ---
 
-My Background
+## My Background
 
 I am a Computer Science graduate from Ashesi University in Ghana, where I developed an interest in using technology to solve practical problems. My undergraduate experience gave me a foundation in software development, databases, data analysis, and problem-solving.
 
 Since graduating, I have had the opportunity to work in different environments, including technology, research, product management, and social impact. These experiences have helped me understand that technology is most valuable when it is connected to real problems and the people affected by them.
 
-My Journey into Data Science
+## My Journey into Data Science
 
 My interest in data science grew from seeing how data can help us understand problems that are otherwise difficult to see.
 
@@ -16,7 +16,7 @@ I have worked with tools such as Python, R, SQL, Excel, Tableau, and Power BI, a
 
 I chose to pursue the Master of Data Science at UBC because I want to move beyond simply working with data toward developing the technical and analytical skills needed to build reliable, data-driven solutions.
 
-Areas I Care About
+## Areas I Care About
 
 I am particularly interested in the intersection of data science, environmental health, and public health.
 
@@ -24,7 +24,7 @@ One area I have been exploring is the relationship between landfill air pollutio
 
 I am also interested in using data science to help African organizations and businesses make better decisions, especially organizations that may not yet have the resources or expertise to fully use their data.
 
-What I Hope to Learn at UBC
+## What I Hope to Learn at UBC
 
 During my MDS journey, I hope to strengthen my ability to:
 
@@ -37,7 +37,7 @@ Use data science to address real-world problems
 
 Beyond the technical skills, I also want to become better at asking the right questions before choosing a model or analyzing a dataset.
 
-Looking Ahead
+## Looking Ahead
 
 My long-term goal is to use data and technology to contribute to meaningful development in Africa.
 

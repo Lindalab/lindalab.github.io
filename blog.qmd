@@ -1,17 +1,7 @@
 ---
-title: "Linda Arthur"
+title: "Blog"
+listing:
+  contents: posts
+  sort: "date desc"
 ---
-
-![Photo of Linda](images/img1.jpeg)
-
-Linda Arthur |
-Master of Data Science Student | Data, Technology & Impact
-
-Welcome to my website! I am Linda Arthur, a data professional and a Master's student in Data Science at the University of British Columbia (UBC).
-
-My journey has taken me from studying Computer Science at Ashesi University in Ghana to working across technology, research, product management, and data analysis. I am particularly interested in how data and technology can be used to address real-world challenges in Africa.
-
-Through the UBC Master of Data Science program, I am developing stronger skills in statistical analysis, machine learning, data visualization, and computational problem-solving. I hope to apply these skills to problems related to environmental health, public health, and data-driven decision-making.
-
-Explore the site to learn more about me, my background, interests, and the work I hope to do with data.
 
