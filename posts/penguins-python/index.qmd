@@ -1,0 +1,143 @@
+---
+title: "Exploring the Palmer Penguins Dataset with Python"
+author: "Linda Arthur"
+date: 2026-09-24
+format: html
+---
+
+## Introduction
+
+In this post, I explore the `palmerpenguins` dataset using Python. I will use
+pandas to answer two questions:
+
+1. Which penguin has the highest bill length?
+2. Which island has the most penguins?
+
+## Loading the data and libraries
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+
+penguins.head()
+```
+
+## Which penguin has the highest bill length?
+```{python} 
+highest_bill = (
+    penguins
+    .sort_values("bill_length_mm", ascending=False)
+    .head(1)
+)
+
+highest_bill
+```
+
+## 2. Number of penguins by island
+```{python}
+island_counts = (
+    penguins
+    .groupby("island")
+    .size()
+    .sort_values(ascending=False)
+)
+
+island_counts
+```
+
+
+ ```{python} 
+island_counts.plot(
+    kind="bar",
+    title="Number of Penguins by Island",
+    xlabel="Island",
+    ylabel="Number of Penguins"
+)
+
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+```
+
+
+
+## 3. Average bill length by species
+
+```{python}
+species_bill = penguins.groupby("species")["bill_length_mm"].mean()
+
+species_bill.plot(
+    kind="bar",
+    color=["#4C78A8", "#F58518", "#54A24B"],
+    title="Average Bill Length by Species",
+    xlabel="Species",
+    ylabel="Average Bill Length (mm)"
+)
+
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+
+```
+
+## Number of Penguins by Species
+```{python}
+species_counts = penguins["species"].value_counts()
+
+species_counts.plot(
+    kind="bar",
+    title="Number of Penguins by Species",
+    xlabel="Species",
+    ylabel="Number of Penguins"
+)
+
+plt.xticks(rotation=0)
+plt.tight_layout()
+plt.show()
+```
+
+## Body Mass by Species
+```{python}
+
+penguins.boxplot(
+    column="body_mass_g",
+    by="species",
+    patch_artist=True
+)
+
+plt.title("Body Mass by Species")
+plt.suptitle("")
+plt.xlabel("Species")
+plt.ylabel("Body Mass (g)")
+
+plt.tight_layout()
+plt.show()
+
+```
+
+## Relationship between the Bill Length and Body Mass of Penguins by their Species
+```{python} 
+plt.figure(figsize=(8, 5))
+
+for species in penguins["species"].dropna().unique():
+    data = penguins[penguins["species"] == species]
+
+    plt.scatter(
+        data["bill_length_mm"],
+        data["body_mass_g"],
+        label=species,
+        alpha=0.7
+    )
+
+plt.title("Bill Length vs Body Mass")
+plt.xlabel("Bill Length (mm)")
+plt.ylabel("Body Mass (g)")
+plt.legend(title="Species")
+
+plt.tight_layout()
+plt.show()
+
+```
