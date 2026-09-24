@@ -23,7 +23,7 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
-## 1. Which penguins with the highest bill length
+## 1. Which penguin with the highest bill length
 ```{r}
 pen_highest_bill_len <- penguins |>
     arrange(desc(bill_length_mm)) |>
@@ -34,12 +34,19 @@ pen_highest_bill_len
 
 From the analysis, the penguins with the highest bill length is Gentoo on the Biscoe island
 
-## 2. Which island has the most penguins?
+## 2a. Which island has the most penguins?
 
 ```{r}
 island_max_pen <- penguins |>
-    count(island,sort=TRUE) |>
-     ggplot(aes(x = island, y = n)) +
+    count(island,sort=TRUE) 
+island_max_pen 
+```
+
+From the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)
+
+## 2b.
+```{r} 
+  ggplot(island_max_pen , aes(x = island, y = n)) +
   geom_col() +
   labs(
     title = "Number of Penguins by Island",
@@ -49,7 +56,6 @@ island_max_pen <- penguins |>
 
 ```
 
-From the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)
 
 3. Nested dataset of Penguis by species and island
 ```{r}
