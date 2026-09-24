@@ -44,7 +44,7 @@ island_max_pen
 
 From the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)
 
-## 2b.
+## 2b. Visualisaing the Number of penguins  per island
 ```{r} 
   ggplot(island_max_pen , aes(x = island, y = n)) +
   geom_col() +
@@ -57,7 +57,7 @@ From the analysis above, the Biscoe island is the one withe the highest penguins
 ```
 
 
-3. Nested dataset of Penguis by species and island
+ ## 3. Nested dataset of Penguis by species and island
 ```{r}
 pen_nested <- penguins |>
     group_by(species,island) |>
