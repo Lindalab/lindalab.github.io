@@ -2,7 +2,7 @@
 title: "Exploring the Palmer Penguins Dataset with R"
 author: "Linda Arthur"
 date: 2026-09-24
-format: html
+
 ---
 
 
