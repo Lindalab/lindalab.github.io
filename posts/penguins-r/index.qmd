@@ -1,0 +1,64 @@
+---
+title: "Exploring the Palmer Penguins Dataset with R"
+author: "Linda Arthur"
+date: 2026-09-24
+format: html
+---
+
+
+## Introduction
+
+In this post, I explore the `palmerpenguins` dataset using R. I will use
+data manipulation techniques from `dplyr` to answer two questions:
+
+1. Which penguin has the highest bill length?
+2. Which island has the most penguins?
+
+I will also create a nested dataset that groups the penguin data by island
+while keeping the other penguin details within each group.
+
+```{r} 
+#loading data and library
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## 1. Which penguins with the highest bill length
+```{r}
+pen_highest_bill_len <- penguins |>
+    arrange(desc(bill_length_mm)) |>
+    slice(1)
+
+pen_highest_bill_len
+```
+
+From the analysis, the penguins with the highest bill length is Gentoo on the Biscoe island
+
+## 2. Which island has the most penguins?
+
+```{r}
+island_max_pen <- penguins |>
+    count(island,sort=TRUE) |>
+     ggplot(aes(x = island, y = n)) +
+  geom_col() +
+  labs(
+    title = "Number of Penguins by Island",
+    x = "Island",
+    y = "Number of Penguins"
+  )
+
+```
+
+From the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)
+
+3. Nested dataset of Penguis by species and island
+```{r}
+pen_nested <- penguins |>
+    group_by(species,island) |>
+    nest()
+
+pen_nested
+pen_nested$data[[1]]
+```
+
+I created a nested dataset that groups the penguins by species and island while keeping the other penguin information within each island as a list-column. The last line select the information about the first penguin in the dataset and its information which is Adelie  and on the Torgersen island.
