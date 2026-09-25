@@ -23,6 +23,11 @@ library(tidyverse)
 library(palmerpenguins)
 ```
 
+## The data used in this analysis come from the
+[Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/),
+collected by the Palmer Station Antarctica LTER.
+
+
 ## 1. Which penguin with the highest bill length
 ```{r}
 pen_highest_bill_len <- penguins |>

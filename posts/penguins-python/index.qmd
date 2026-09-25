@@ -23,7 +23,13 @@ from palmerpenguins import load_penguins
 penguins = load_penguins()
 
 penguins.head()
+
 ```
+
+## The data used in this analysis come from the
+[Palmer Penguins dataset](https://allisonhorst.github.io/palmerpenguins/),
+collected by the Palmer Station Antarctica LTER.
+
 
 ## Which penguin has the highest bill length?
 ```{python} 
