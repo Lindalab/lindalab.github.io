@@ -21,6 +21,48 @@
     "text": "I am data professional and a Master’s student in Data Science at the University of British Columbia (UBC).\nMy journey has taken me from studying Computer Science at Ashesi University in Ghana to working across technology, research, product management, and data analysis. I am particularly interested in how data and technology can be used to address real-world challenges.\nThrough the UBC Master of Data Science program, I am developing stronger skills in statistical analysis, machine learning, data visualization, and computational problem-solving.\nExplore the site to learn more about me, my background, interests, and the work I hope to do with data."
   },
   {
+    "objectID": "posts/penguins-r/index.html",
+    "href": "posts/penguins-r/index.html",
+    "title": "Exploring the Palmer Penguins Dataset with R",
+    "section": "",
+    "text": "In this post, I explore the palmerpenguins dataset using R. I will use data manipulation techniques from dplyr to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?\n\nI will also create a nested dataset that groups the penguin data by island while keeping the other penguin details within each group.\n\n#loading data and library\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\n\nAttaching package: 'palmerpenguins'\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#introduction",
+    "href": "posts/penguins-r/index.html#introduction",
+    "title": "Exploring the Palmer Penguins Dataset with R",
+    "section": "",
+    "text": "In this post, I explore the palmerpenguins dataset using R. I will use data manipulation techniques from dplyr to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?\n\nI will also create a nested dataset that groups the penguin data by island while keeping the other penguin details within each group.\n\n#loading data and library\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\n\nAttaching package: 'palmerpenguins'\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#the-data-used-in-this-analysis-come-from-the",
+    "href": "posts/penguins-r/index.html#the-data-used-in-this-analysis-come-from-the",
+    "title": "Exploring the Palmer Penguins Dataset with R",
+    "section": "The data used in this analysis come from the",
+    "text": "The data used in this analysis come from the\nPalmer Penguins dataset, collected by the Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#which-penguin-with-the-highest-bill-length",
+    "href": "posts/penguins-r/index.html#which-penguin-with-the-highest-bill-length",
+    "title": "Exploring the Palmer Penguins Dataset with R",
+    "section": "1. Which penguin with the highest bill length",
+    "text": "1. Which penguin with the highest bill length\n\npen_highest_bill_len &lt;- penguins |&gt;\n    arrange(desc(bill_length_mm)) |&gt;\n    slice(1)\n\npen_highest_bill_len\n\n# A tibble: 1 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Gentoo  Biscoe           59.6            17               230        6050\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nFrom the analysis, the penguins with the highest bill length is Gentoo on the Biscoe island"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#a.-which-island-has-the-most-penguins",
+    "href": "posts/penguins-r/index.html#a.-which-island-has-the-most-penguins",
+    "title": "Exploring the Palmer Penguins Dataset with R",
+    "section": "2a. Which island has the most penguins?",
+    "text": "2a. Which island has the most penguins?\n\nisland_max_pen &lt;- penguins |&gt;\n    count(island,sort=TRUE) \nisland_max_pen \n\n# A tibble: 3 × 2\n  island        n\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52\n\n\nFrom the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)"
+  },
+  {
+    "objectID": "posts/penguins-r/index.html#b.-visualisaing-the-number-of-penguins-per-island",
+    "href": "posts/penguins-r/index.html#b.-visualisaing-the-number-of-penguins-per-island",
+    "title": "Exploring the Palmer Penguins Dataset with R",
+    "section": "2b. Visualisaing the Number of penguins per island",
+    "text": "2b. Visualisaing the Number of penguins per island\n\n  ggplot(island_max_pen , aes(x = island, y = n)) +\n  geom_col() +\n  labs(\n    title = \"Number of Penguins by Island\",\n    x = \"Island\",\n    y = \"Number of Penguins\"\n  )\n\n\n\n\n\n\n\n\n## 3. Nested dataset of Penguis by species and island\n\npen_nested &lt;- penguins |&gt;\n    group_by(species,island) |&gt;\n    nest()\n\npen_nested\n\n# A tibble: 5 × 3\n# Groups:   species, island [5]\n  species   island    data              \n  &lt;fct&gt;     &lt;fct&gt;     &lt;list&gt;            \n1 Adelie    Torgersen &lt;tibble [52 × 6]&gt; \n2 Adelie    Biscoe    &lt;tibble [44 × 6]&gt; \n3 Adelie    Dream     &lt;tibble [56 × 6]&gt; \n4 Gentoo    Biscoe    &lt;tibble [124 × 6]&gt;\n5 Chinstrap Dream     &lt;tibble [68 × 6]&gt; \n\npen_nested$data[[1]]\n\n# A tibble: 52 × 6\n   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year\n            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;\n 1           39.1          18.7               181        3750 male    2007\n 2           39.5          17.4               186        3800 female  2007\n 3           40.3          18                 195        3250 female  2007\n 4           NA            NA                  NA          NA &lt;NA&gt;    2007\n 5           36.7          19.3               193        3450 female  2007\n 6           39.3          20.6               190        3650 male    2007\n 7           38.9          17.8               181        3625 female  2007\n 8           39.2          19.6               195        4675 male    2007\n 9           34.1          18.1               193        3475 &lt;NA&gt;    2007\n10           42            20.2               190        4250 &lt;NA&gt;    2007\n# ℹ 42 more rows\n\n\nI created a nested dataset that groups the penguins by species and island while keeping the other penguin information within each island as a list-column. The last line select the information about the first penguin in the dataset and its information which is Adelie and on the Torgersen island."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
@@ -33,6 +75,69 @@
     "title": "My first weeks in MDS",
     "section": "Week 1: Getting Started with MDS",
     "text": "Week 1: Getting Started with MDS\nMy first week of the Master of Data Science (MDS) program has been exciting and full of new experiences. I have spent the week learning new concepts, getting familiar with the program, and meeting new people.\nOne of the things I have enjoyed most so far is making new friends and connecting with other students. Starting a new program in a new environment can be challenging, so having people around who are also learning and experiencing the same things has made the transition more enjoyable.\nAcademically, I am particularly happy that I am beginning to understand the basics of probability. Some of the concepts were initially challenging, but as I worked through the material and practiced more, they started to make sense. This has given me more confidence as I continue building my foundation in data science.\nIt is only the first week, so there is still a lot to learn. However, I am excited about the journey ahead and looking forward to seeing how much I will grow throughout the program.\nWeek 1 takeaway: Keep learning, keep asking questions, and don’t be afraid of difficult concepts. They become easier with practice."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html",
+    "href": "posts/penguins-python/index.html",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "",
+    "text": "In this post, I explore the palmerpenguins dataset using Python. I will use pandas to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#introduction",
+    "href": "posts/penguins-python/index.html#introduction",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "",
+    "text": "In this post, I explore the palmerpenguins dataset using Python. I will use pandas to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#loading-the-data-and-libraries",
+    "href": "posts/penguins-python/index.html#loading-the-data-and-libraries",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "Loading the data and libraries",
+    "text": "Loading the data and libraries\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()\n\npenguins.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#the-data-used-in-this-analysis-come-from-the",
+    "href": "posts/penguins-python/index.html#the-data-used-in-this-analysis-come-from-the",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "The data used in this analysis come from the",
+    "text": "The data used in this analysis come from the\nPalmer Penguins dataset, collected by the Palmer Station Antarctica LTER."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#which-penguin-has-the-highest-bill-length",
+    "href": "posts/penguins-python/index.html#which-penguin-has-the-highest-bill-length",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "Which penguin has the highest bill length?",
+    "text": "Which penguin has the highest bill length?\n\nhighest_bill = (\n    penguins\n    .sort_values(\"bill_length_mm\", ascending=False)\n    .head(1)\n)\n\nhighest_bill\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n185\nGentoo\nBiscoe\n59.6\n17.0\n230.0\n6050.0\nmale\n2007"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#number-of-penguins-by-island",
+    "href": "posts/penguins-python/index.html#number-of-penguins-by-island",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "2. Number of penguins by island",
+    "text": "2. Number of penguins by island\n\nisland_counts = (\n    penguins\n    .groupby(\"island\")\n    .size()\n    .sort_values(ascending=False)\n)\n\nisland_counts\n\nisland\nBiscoe       168\nDream        124\nTorgersen     52\ndtype: int64\n\n\nisland_counts.plot( kind=“bar”, title=“Number of Penguins by Island”, xlabel=“Island”, ylabel=“Number of Penguins” )\nplt.xticks(rotation=0) plt.tight_layout() plt.show()\n\n\n\n## 3. Average bill length by species\n\n```{python}\nspecies_bill = penguins.groupby(\"species\")[\"bill_length_mm\"].mean()\n\nspecies_bill.plot(\n    kind=\"bar\",\n    color=[\"#4C78A8\", \"#F58518\", \"#54A24B\"],\n    title=\"Average Bill Length by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Average Bill Length (mm)\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#number-of-penguins-by-species",
+    "href": "posts/penguins-python/index.html#number-of-penguins-by-species",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "Number of Penguins by Species",
+    "text": "Number of Penguins by Species\nspecies_counts = penguins[\"species\"].value_counts()\n\nspecies_counts.plot(\n    kind=\"bar\",\n    title=\"Number of Penguins by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Number of Penguins\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#body-mass-by-species",
+    "href": "posts/penguins-python/index.html#body-mass-by-species",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "Body Mass by Species",
+    "text": "Body Mass by Species\n\npenguins.boxplot(\n    column=\"body_mass_g\",\n    by=\"species\",\n    patch_artist=True\n)\n\nplt.title(\"Body Mass by Species\")\nplt.suptitle(\"\")\nplt.xlabel(\"Species\")\nplt.ylabel(\"Body Mass (g)\")\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species",
+    "href": "posts/penguins-python/index.html#relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "Relationship between the Bill Length and Body Mass of Penguins by their Species",
+    "text": "Relationship between the Bill Length and Body Mass of Penguins by their Species\nplt.figure(figsize=(8, 5))\n\nfor species in penguins[\"species\"].dropna().unique():\n    data = penguins[penguins[\"species\"] == species]\n\n    plt.scatter(\n        data[\"bill_length_mm\"],\n        data[\"body_mass_g\"],\n        label=species,\n        alpha=0.7\n    )\n\nplt.title(\"Bill Length vs Body Mass\")\nplt.xlabel(\"Bill Length (mm)\")\nplt.ylabel(\"Body Mass (g)\")\nplt.legend(title=\"Species\")\n\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "about.html",
@@ -75,75 +180,5 @@
     "title": "About",
     "section": "Looking Ahead",
     "text": "Looking Ahead\nMy long-term goal is to use data and technology to contribute to meaningful development in Africa.\nI hope to work at the intersection of data science, technology, research, and social impact—helping organizations turn data into information that can support better decisions and better outcomes.\nThis website will document part of that journey: what I learn, what I build, and how my thinking develops throughout the MDS program."
-  },
-  {
-    "objectID": "posts/penguins-python/index.html",
-    "href": "posts/penguins-python/index.html",
-    "title": "Exploring the Palmer Penguins Dataset with Python",
-    "section": "",
-    "text": "In this post, I explore the palmerpenguins dataset using Python. I will use pandas to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?"
-  },
-  {
-    "objectID": "posts/penguins-python/index.html#introduction",
-    "href": "posts/penguins-python/index.html#introduction",
-    "title": "Exploring the Palmer Penguins Dataset with Python",
-    "section": "",
-    "text": "In this post, I explore the palmerpenguins dataset using Python. I will use pandas to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?"
-  },
-  {
-    "objectID": "posts/penguins-python/index.html#loading-the-data-and-libraries",
-    "href": "posts/penguins-python/index.html#loading-the-data-and-libraries",
-    "title": "Exploring the Palmer Penguins Dataset with Python",
-    "section": "Loading the data and libraries",
-    "text": "Loading the data and libraries\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()\n\npenguins.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007"
-  },
-  {
-    "objectID": "posts/penguins-python/index.html#which-penguin-has-the-highest-bill-length",
-    "href": "posts/penguins-python/index.html#which-penguin-has-the-highest-bill-length",
-    "title": "Exploring the Palmer Penguins Dataset with Python",
-    "section": "Which penguin has the highest bill length?",
-    "text": "Which penguin has the highest bill length?\n\nhighest_bill = (\n    penguins\n    .sort_values(\"bill_length_mm\", ascending=False)\n    .head(1)\n)\n\nhighest_bill\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n185\nGentoo\nBiscoe\n59.6\n17.0\n230.0\n6050.0\nmale\n2007"
-  },
-  {
-    "objectID": "posts/penguins-python/index.html#number-of-penguins-by-island",
-    "href": "posts/penguins-python/index.html#number-of-penguins-by-island",
-    "title": "Exploring the Palmer Penguins Dataset with Python",
-    "section": "2. Number of penguins by island",
-    "text": "2. Number of penguins by island\n\nisland_counts = (\n    penguins\n    .groupby(\"island\")\n    .size()\n    .sort_values(ascending=False)\n)\n\nisland_counts\n\nisland\nBiscoe       168\nDream        124\nTorgersen     52\ndtype: int64\n\n\nisland_counts.plot( kind=“bar”, title=“Number of Penguins by Island”, xlabel=“Island”, ylabel=“Number of Penguins” )\nplt.xticks(rotation=0) plt.tight_layout() plt.show()\n\n\n\n## 3. Average bill length by species\n\n```{python}\nspecies_bill = penguins.groupby(\"species\")[\"bill_length_mm\"].mean()\n\nspecies_bill.plot(\n    kind=\"bar\",\n    color=[\"#4C78A8\", \"#F58518\", \"#54A24B\"],\n    title=\"Average Bill Length by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Average Bill Length (mm)\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()\n\nspecies_counts = penguins[\"species\"].value_counts()\n\nspecies_counts.plot(\n    kind=\"bar\",\n    title=\"Number of Penguins by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Number of Penguins\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()\n\npenguins.boxplot(\n    column=\"body_mass_g\",\n    by=\"species\",\n    patch_artist=True\n)\n\nplt.title(\"Body Mass by Species\")\nplt.suptitle(\"\")\nplt.xlabel(\"Species\")\nplt.ylabel(\"Body Mass (g)\")\n\nplt.tight_layout()\nplt.show()\n\nplt.figure(figsize=(8, 5))\n\nfor species in penguins[\"species\"].dropna().unique():\n    data = penguins[penguins[\"species\"] == species]\n\n    plt.scatter(\n        data[\"bill_length_mm\"],\n        data[\"body_mass_g\"],\n        label=species,\n        alpha=0.7\n    )\n\nplt.title(\"Bill Length vs Body Mass\")\nplt.xlabel(\"Bill Length (mm)\")\nplt.ylabel(\"Body Mass (g)\")\nplt.legend(title=\"Species\")\n\nplt.tight_layout()\nplt.show()"
-  },
-  {
-    "objectID": "posts/penguins-r/index.html",
-    "href": "posts/penguins-r/index.html",
-    "title": "Exploring the Palmer Penguins Dataset with R",
-    "section": "",
-    "text": "In this post, I explore the palmerpenguins dataset using R. I will use data manipulation techniques from dplyr to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?\n\nI will also create a nested dataset that groups the penguin data by island while keeping the other penguin details within each group.\n\n#loading data and library\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\n\nAttaching package: 'palmerpenguins'\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw"
-  },
-  {
-    "objectID": "posts/penguins-r/index.html#introduction",
-    "href": "posts/penguins-r/index.html#introduction",
-    "title": "Exploring the Palmer Penguins Dataset with R",
-    "section": "",
-    "text": "In this post, I explore the palmerpenguins dataset using R. I will use data manipulation techniques from dplyr to answer two questions:\n\nWhich penguin has the highest bill length?\nWhich island has the most penguins?\n\nI will also create a nested dataset that groups the penguin data by island while keeping the other penguin details within each group.\n\n#loading data and library\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.2.1     ✔ readr     2.2.0\n✔ forcats   1.0.1     ✔ stringr   1.6.0\n✔ ggplot2   4.0.3     ✔ tibble    3.3.1\n✔ lubridate 1.9.5     ✔ tidyr     1.3.2\n✔ purrr     1.2.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(palmerpenguins)\n\n\nAttaching package: 'palmerpenguins'\n\nThe following objects are masked from 'package:datasets':\n\n    penguins, penguins_raw"
-  },
-  {
-    "objectID": "posts/penguins-r/index.html#which-penguin-with-the-highest-bill-length",
-    "href": "posts/penguins-r/index.html#which-penguin-with-the-highest-bill-length",
-    "title": "Exploring the Palmer Penguins Dataset with R",
-    "section": "1. Which penguin with the highest bill length",
-    "text": "1. Which penguin with the highest bill length\n\npen_highest_bill_len &lt;- penguins |&gt;\n    arrange(desc(bill_length_mm)) |&gt;\n    slice(1)\n\npen_highest_bill_len\n\n# A tibble: 1 × 8\n  species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Gentoo  Biscoe           59.6            17               230        6050\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nFrom the analysis, the penguins with the highest bill length is Gentoo on the Biscoe island"
-  },
-  {
-    "objectID": "posts/penguins-r/index.html#a.-which-island-has-the-most-penguins",
-    "href": "posts/penguins-r/index.html#a.-which-island-has-the-most-penguins",
-    "title": "Exploring the Palmer Penguins Dataset with R",
-    "section": "2a. Which island has the most penguins?",
-    "text": "2a. Which island has the most penguins?\n\nisland_max_pen &lt;- penguins |&gt;\n    count(island,sort=TRUE) \nisland_max_pen \n\n# A tibble: 3 × 2\n  island        n\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52\n\n\nFrom the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)"
-  },
-  {
-    "objectID": "posts/penguins-r/index.html#b.",
-    "href": "posts/penguins-r/index.html#b.",
-    "title": "Exploring the Palmer Penguins Dataset with R",
-    "section": "2b.",
-    "text": "2b.\n\n  ggplot(island_max_pen , aes(x = island, y = n)) +\n  geom_col() +\n  labs(\n    title = \"Number of Penguins by Island\",\n    x = \"Island\",\n    y = \"Number of Penguins\"\n  )\n\n\n\n\n\n\n\n\n\nNested dataset of Penguis by species and island\n\n\npen_nested &lt;- penguins |&gt;\n    group_by(species,island) |&gt;\n    nest()\n\npen_nested\n\n# A tibble: 5 × 3\n# Groups:   species, island [5]\n  species   island    data              \n  &lt;fct&gt;     &lt;fct&gt;     &lt;list&gt;            \n1 Adelie    Torgersen &lt;tibble [52 × 6]&gt; \n2 Adelie    Biscoe    &lt;tibble [44 × 6]&gt; \n3 Adelie    Dream     &lt;tibble [56 × 6]&gt; \n4 Gentoo    Biscoe    &lt;tibble [124 × 6]&gt;\n5 Chinstrap Dream     &lt;tibble [68 × 6]&gt; \n\npen_nested$data[[1]]\n\n# A tibble: 52 × 6\n   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year\n            &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt; &lt;fct&gt;  &lt;int&gt;\n 1           39.1          18.7               181        3750 male    2007\n 2           39.5          17.4               186        3800 female  2007\n 3           40.3          18                 195        3250 female  2007\n 4           NA            NA                  NA          NA &lt;NA&gt;    2007\n 5           36.7          19.3               193        3450 female  2007\n 6           39.3          20.6               190        3650 male    2007\n 7           38.9          17.8               181        3625 female  2007\n 8           39.2          19.6               195        4675 male    2007\n 9           34.1          18.1               193        3475 &lt;NA&gt;    2007\n10           42            20.2               190        4250 &lt;NA&gt;    2007\n# ℹ 42 more rows\n\n\nI created a nested dataset that groups the penguins by species and island while keeping the other penguin information within each island as a list-column. The last line select the information about the first penguin in the dataset and its information which is Adelie and on the Torgersen island."
   }
 ]

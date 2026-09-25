@@ -161,9 +161,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-data-used-in-this-analysis-come-from-the" id="toc-the-data-used-in-this-analysis-come-from-the" class="nav-link" data-scroll-target="#the-data-used-in-this-analysis-come-from-the">The data used in this analysis come from the</a></li>
   <li><a href="#which-penguin-with-the-highest-bill-length" id="toc-which-penguin-with-the-highest-bill-length" class="nav-link" data-scroll-target="#which-penguin-with-the-highest-bill-length">1. Which penguin with the highest bill length</a></li>
   <li><a href="#a.-which-island-has-the-most-penguins" id="toc-a.-which-island-has-the-most-penguins" class="nav-link" data-scroll-target="#a.-which-island-has-the-most-penguins">2a. Which island has the most penguins?</a></li>
-  <li><a href="#b." id="toc-b." class="nav-link" data-scroll-target="#b.">2b.</a></li>
+  <li><a href="#b.-visualisaing-the-number-of-penguins-per-island" id="toc-b.-visualisaing-the-number-of-penguins-per-island" class="nav-link" data-scroll-target="#b.-visualisaing-the-number-of-penguins-per-island">2b. Visualisaing the Number of penguins per island</a></li>
   </ul>
 </nav>
     </div>
@@ -235,6 +236,10 @@ The following objects are masked from 'package:datasets':
 </div>
 </div>
 </section>
+<section id="the-data-used-in-this-analysis-come-from-the" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-used-in-this-analysis-come-from-the">The data used in this analysis come from the</h2>
+<p><a href="https://allisonhorst.github.io/palmerpenguins/">Palmer Penguins dataset</a>, collected by the Palmer Station Antarctica LTER.</p>
+</section>
 <section id="which-penguin-with-the-highest-bill-length" class="level2">
 <h2 class="anchored" data-anchor-id="which-penguin-with-the-highest-bill-length">1. Which penguin with the highest bill length</h2>
 <div class="cell">
@@ -270,8 +275,8 @@ The following objects are masked from 'package:datasets':
 </div>
 <p>From the analysis above, the Biscoe island is the one withe the highest penguins of 168, followed by Dream(124) and Torgersen (52)</p>
 </section>
-<section id="b." class="level2">
-<h2 class="anchored" data-anchor-id="b.">2b.</h2>
+<section id="b.-visualisaing-the-number-of-penguins-per-island" class="level2">
+<h2 class="anchored" data-anchor-id="b.-visualisaing-the-number-of-penguins-per-island">2b. Visualisaing the Number of penguins per island</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(island_max_pen , <span class="fu">aes</span>(<span class="at">x =</span> island, <span class="at">y =</span> n)) <span class="sc">+</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
@@ -288,9 +293,7 @@ The following objects are masked from 'package:datasets':
 </div>
 </div>
 </div>
-<ol start="3" type="1">
-<li>Nested dataset of Penguis by species and island</li>
-</ol>
+<p>## 3. Nested dataset of Penguis by species and island</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pen_nested <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species,island) <span class="sc">|&gt;</span></span>

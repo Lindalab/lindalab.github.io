@@ -1020,6 +1020,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "palmerpenguins" },
     { name = "pandas" },
+    { name = "pyyaml" },
 ]
 
 [package.metadata]
@@ -1029,6 +1030,7 @@ requires-dist = [
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "palmerpenguins", specifier = ">=0.1.6" },
     { name = "pandas", specifier = ">=3.0.6" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
 ]
 
 [[package]]

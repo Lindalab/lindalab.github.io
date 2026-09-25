@@ -165,8 +165,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#loading-the-data-and-libraries" id="toc-loading-the-data-and-libraries" class="nav-link" data-scroll-target="#loading-the-data-and-libraries">Loading the data and libraries</a></li>
+  <li><a href="#the-data-used-in-this-analysis-come-from-the" id="toc-the-data-used-in-this-analysis-come-from-the" class="nav-link" data-scroll-target="#the-data-used-in-this-analysis-come-from-the">The data used in this analysis come from the</a></li>
   <li><a href="#which-penguin-has-the-highest-bill-length" id="toc-which-penguin-has-the-highest-bill-length" class="nav-link" data-scroll-target="#which-penguin-has-the-highest-bill-length">Which penguin has the highest bill length?</a></li>
   <li><a href="#number-of-penguins-by-island" id="toc-number-of-penguins-by-island" class="nav-link" data-scroll-target="#number-of-penguins-by-island">2. Number of penguins by island</a></li>
+  <li><a href="#number-of-penguins-by-species" id="toc-number-of-penguins-by-species" class="nav-link" data-scroll-target="#number-of-penguins-by-species">Number of Penguins by Species</a></li>
+  <li><a href="#body-mass-by-species" id="toc-body-mass-by-species" class="nav-link" data-scroll-target="#body-mass-by-species">Body Mass by Species</a></li>
+  <li><a href="#relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species" id="toc-relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species" class="nav-link" data-scroll-target="#relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species">Relationship between the Bill Length and Body Mass of Penguins by their Species</a></li>
   </ul>
 </nav>
     </div>
@@ -214,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="loading-the-data-and-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="loading-the-data-and-libraries">Loading the data and libraries</h2>
-<div id="835d0279" class="cell" data-execution_count="1">
+<div id="43128a4b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span>
@@ -303,9 +307,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="the-data-used-in-this-analysis-come-from-the" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-used-in-this-analysis-come-from-the">The data used in this analysis come from the</h2>
+<p><a href="https://allisonhorst.github.io/palmerpenguins/">Palmer Penguins dataset</a>, collected by the Palmer Station Antarctica LTER.</p>
+</section>
 <section id="which-penguin-has-the-highest-bill-length" class="level2">
 <h2 class="anchored" data-anchor-id="which-penguin-has-the-highest-bill-length">Which penguin has the highest bill length?</h2>
-<div id="d8513f63" class="cell" data-execution_count="2">
+<div id="6f754381" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>highest_bill <span class="op">=</span> (</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    penguins</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">"bill_length_mm"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
@@ -352,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="number-of-penguins-by-island" class="level2">
 <h2 class="anchored" data-anchor-id="number-of-penguins-by-island">2. Number of penguins by island</h2>
-<div id="5e386b13" class="cell" data-execution_count="3">
+<div id="15eeba77" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>island_counts <span class="op">=</span> (</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    penguins</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">"island"</span>)</span>
@@ -391,6 +399,9 @@ plt.xticks(rotation=0)
 plt.tight_layout()
 plt.show()
 </code></pre>
+</section>
+<section id="number-of-penguins-by-species" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-penguins-by-species">Number of Penguins by Species</h2>
 <pre class="{python}"><code>species_counts = penguins["species"].value_counts()
 
 species_counts.plot(
@@ -403,6 +414,9 @@ species_counts.plot(
 plt.xticks(rotation=0)
 plt.tight_layout()
 plt.show()</code></pre>
+</section>
+<section id="body-mass-by-species" class="level2">
+<h2 class="anchored" data-anchor-id="body-mass-by-species">Body Mass by Species</h2>
 <pre class="{python}"><code>
 penguins.boxplot(
     column="body_mass_g",
@@ -418,6 +432,9 @@ plt.ylabel("Body Mass (g)")
 plt.tight_layout()
 plt.show()
 </code></pre>
+</section>
+<section id="relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species">Relationship between the Bill Length and Body Mass of Penguins by their Species</h2>
 <pre class="{python}"><code>plt.figure(figsize=(8, 5))
 
 for species in penguins["species"].dropna().unique():
