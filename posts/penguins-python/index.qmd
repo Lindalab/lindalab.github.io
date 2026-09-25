@@ -2,6 +2,10 @@
 title: "Exploring the Palmer Penguins Dataset with Python"
 author: "Linda Arthur"
 date: 2026-09-24
+jupyter: python3
+execute: 
+  echo: true
+  output: true
 
 ---
 
@@ -56,6 +60,9 @@ island_counts
 
 
 ```{python} 
+#| label: fig-penguins-island
+#| fig-cap: "Number of Penguins by Island"
+
 island_counts.plot(
     kind="bar",
     title="Number of Penguins by Island",
@@ -73,6 +80,9 @@ plt.show()
 ## 3. Average bill length by species
 
 ```{python}
+#| label: fig-average-bill
+#| fig-cap: "Average Bill Length by Species"
+
 species_bill = penguins.groupby("species")["bill_length_mm"].mean()
 
 species_bill.plot(
@@ -91,6 +101,10 @@ plt.show()
 
 ## Number of Penguins by Species
 ```{python}
+#| label: fig-penguins-species
+#| fig-cap: "Number of Penguins by Species"
+
+
 species_counts = penguins["species"].value_counts()
 
 species_counts.plot(
@@ -107,6 +121,8 @@ plt.show()
 
 ## Body Mass by Species
 ```{python}
+#| label: fig-body-mass
+#| fig-cap: "Body Mass by Species"
 
 penguins.boxplot(
     column="body_mass_g",
@@ -126,6 +142,11 @@ plt.show()
 
 ## Relationship between the Bill Length and Body Mass of Penguins by their Species
 ```{python} 
+#| label: fig-bill-body-mass
+#| fig-cap: "Relationship between Bill Length and Body Mass by Species"
+
+
+
 plt.figure(figsize=(8, 5))
 
 for species in penguins["species"].dropna().unique():
