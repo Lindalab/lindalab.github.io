@@ -116,14 +116,14 @@
     "href": "posts/penguins-python/index.html#number-of-penguins-by-island",
     "title": "Exploring the Palmer Penguins Dataset with Python",
     "section": "2. Number of penguins by island",
-    "text": "2. Number of penguins by island\n\nisland_counts = (\n    penguins\n    .groupby(\"island\")\n    .size()\n    .sort_values(ascending=False)\n)\n\nisland_counts\n\nisland\nBiscoe       168\nDream        124\nTorgersen     52\ndtype: int64\n\n\nisland_counts.plot( kind=“bar”, title=“Number of Penguins by Island”, xlabel=“Island”, ylabel=“Number of Penguins” )\nplt.xticks(rotation=0) plt.tight_layout() plt.show()\n\n\n\n## 3. Average bill length by species\n\n```{python}\nspecies_bill = penguins.groupby(\"species\")[\"bill_length_mm\"].mean()\n\nspecies_bill.plot(\n    kind=\"bar\",\n    color=[\"#4C78A8\", \"#F58518\", \"#54A24B\"],\n    title=\"Average Bill Length by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Average Bill Length (mm)\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
+    "text": "2. Number of penguins by island\n\nisland_counts = (\n    penguins\n    .groupby(\"island\")\n    .size()\n    .sort_values(ascending=False)\n)\n\nisland_counts\n\nisland\nBiscoe       168\nDream        124\nTorgersen     52\ndtype: int64\n\n\n\nisland_counts.plot(\n    kind=\"bar\",\n    title=\"Number of Penguins by Island\",\n    xlabel=\"Island\",\n    ylabel=\"Number of Penguins\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "posts/penguins-python/index.html#number-of-penguins-by-species",
     "href": "posts/penguins-python/index.html#number-of-penguins-by-species",
     "title": "Exploring the Palmer Penguins Dataset with Python",
     "section": "Number of Penguins by Species",
-    "text": "Number of Penguins by Species\nspecies_counts = penguins[\"species\"].value_counts()\n\nspecies_counts.plot(\n    kind=\"bar\",\n    title=\"Number of Penguins by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Number of Penguins\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
+    "text": "Number of Penguins by Species\n\nspecies_counts = penguins[\"species\"].value_counts()\n\nspecies_counts.plot(\n    kind=\"bar\",\n    title=\"Number of Penguins by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Number of Penguins\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "posts/penguins-python/index.html#body-mass-by-species",
@@ -137,7 +137,7 @@
     "href": "posts/penguins-python/index.html#relationship-between-the-bill-length-and-body-mass-of-penguins-by-their-species",
     "title": "Exploring the Palmer Penguins Dataset with Python",
     "section": "Relationship between the Bill Length and Body Mass of Penguins by their Species",
-    "text": "Relationship between the Bill Length and Body Mass of Penguins by their Species\nplt.figure(figsize=(8, 5))\n\nfor species in penguins[\"species\"].dropna().unique():\n    data = penguins[penguins[\"species\"] == species]\n\n    plt.scatter(\n        data[\"bill_length_mm\"],\n        data[\"body_mass_g\"],\n        label=species,\n        alpha=0.7\n    )\n\nplt.title(\"Bill Length vs Body Mass\")\nplt.xlabel(\"Bill Length (mm)\")\nplt.ylabel(\"Body Mass (g)\")\nplt.legend(title=\"Species\")\n\nplt.tight_layout()\nplt.show()"
+    "text": "Relationship between the Bill Length and Body Mass of Penguins by their Species\n\nplt.figure(figsize=(8, 5))\n\nfor species in penguins[\"species\"].dropna().unique():\n    data = penguins[penguins[\"species\"] == species]\n\n    plt.scatter(\n        data[\"bill_length_mm\"],\n        data[\"body_mass_g\"],\n        label=species,\n        alpha=0.7\n    )\n\nplt.title(\"Bill Length vs Body Mass\")\nplt.xlabel(\"Bill Length (mm)\")\nplt.ylabel(\"Body Mass (g)\")\nplt.legend(title=\"Species\")\n\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "about.html",
@@ -180,5 +180,12 @@
     "title": "About",
     "section": "Looking Ahead",
     "text": "Looking Ahead\nMy long-term goal is to use data and technology to contribute to meaningful development in Africa.\nI hope to work at the intersection of data science, technology, research, and social impact—helping organizations turn data into information that can support better decisions and better outcomes.\nThis website will document part of that journey: what I learn, what I build, and how my thinking develops throughout the MDS program."
+  },
+  {
+    "objectID": "posts/penguins-python/index.html#average-bill-length-by-species",
+    "href": "posts/penguins-python/index.html#average-bill-length-by-species",
+    "title": "Exploring the Palmer Penguins Dataset with Python",
+    "section": "3. Average bill length by species",
+    "text": "3. Average bill length by species\n\nspecies_bill = penguins.groupby(\"species\")[\"bill_length_mm\"].mean()\n\nspecies_bill.plot(\n    kind=\"bar\",\n    color=[\"#4C78A8\", \"#F58518\", \"#54A24B\"],\n    title=\"Average Bill Length by Species\",\n    xlabel=\"Species\",\n    ylabel=\"Average Bill Length (mm)\"\n)\n\nplt.xticks(rotation=0)\nplt.tight_layout()\nplt.show()"
   }
 ]

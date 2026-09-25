@@ -55,7 +55,7 @@ island_counts
 ```
 
 
- ```{python} 
+```{python} 
 island_counts.plot(
     kind="bar",
     title="Number of Penguins by Island",
